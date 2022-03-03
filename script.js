@@ -14,7 +14,6 @@ function time() {
 
     return (res = hour + ":" + min);
 }
-timeEl.innerHTML = time();
 
 // AM or PM
 function amOrPm() {
@@ -24,7 +23,6 @@ function amOrPm() {
         return "PM";
     }
 }
-amPmEl.innerHTML = amOrPm();
 
 // Cuurent Weekday
 function findOutCurrentWeek() {
@@ -32,7 +30,6 @@ function findOutCurrentWeek() {
         weekday: "short",
     }));
 }
-weekEl.innerHTML = findOutCurrentWeek();
 
 // Cuurent Date
 function findOutCurrentDate() {
@@ -40,4 +37,10 @@ function findOutCurrentDate() {
     var day = new Date().getDate();
     return month + "/" + day;
 }
-dateEl.innerHTML = findOutCurrentDate();
+
+setInterval(function() {
+    timeEl.innerHTML = time();
+    amPmEl.innerHTML = amOrPm();
+    weekEl.innerHTML = findOutCurrentWeek();
+    dateEl.innerHTML = findOutCurrentDate();
+}, 1000);
