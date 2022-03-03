@@ -11,13 +11,14 @@ function time() {
         current.getMinutes() <= 9 ?
         "0" + current.getMinutes() :
         current.getMinutes();
+
     return (res = hour + ":" + min);
 }
 timeEl.innerHTML = time();
 
 // AM or PM
 function amOrPm() {
-    if (new Date().getHours() > 12) {
+    if (new Date().getHours() < 11) {
         return "AM";
     } else {
         return "PM";
